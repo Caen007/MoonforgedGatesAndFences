@@ -20,27 +20,34 @@ Expand your building options in Valheim with a curated collection of handcrafted
 
 ## 📸 Screenshots
 
-### Grand Gate
+## 📸 Screenshots
+
+## Grand Gate
 ![Grand Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20171019.png)
 
-### Ornamental Fence
+## Ornamental Fence
 ![Ornamental Fence](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20170407.png)
 
-### Decorative Gate
+## Decorative Gate
 ![Decorative Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20171037.png)
 
-### Fortified Entrance
-![Fortified Entrance](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20170044.png)
+## Fortified Entrance
+![Fortified Entrance](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20163431.png)
 
-### Chain Fence
-![Chain Fence](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20170005.png)
+## Chain Fence
+![Chain Fence](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20164841.png)
 
-### Old Style Gate
-![Old Style Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20164841.png)
+## Old Style Gate
+![Old Style Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20165005.png)
 
-### New Fence Style
-![New Fence](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20165314.png)
+## New Fence Style
+![New Fence Style](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20165314.png)
 
+## Wide Showcase
+![Wide Showcase](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20171030.png)
+
+## Pillars + Gate (Night)
+![Pillars + Gate (Night)](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20170400.png)
 ---
 
 ## 🔨 How to Install
