@@ -1,69 +1,69 @@
 # Moonforged Gates & Fences
 
-![Preview Banner](img/20250718144616_1.jpg)
+![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20171030.png)
 
-Moonforged Gates & Fences by **Caenos** adds custom buildable gates, fences, and walls with new resource costs, crafting stations, and proper multiplayer support.  
-Includes placement tracking, asset bundle loading, and localization.
+Build your dream Viking settlement!  
 
----
+**Moonforged Gates & Fences** adds a variety of new gates, fences, and walls to Valheim.  
 
-## Features
-
-- **Custom Gates, Fences, and Walls**  
-  High-quality, unique pieces to expand your building creativity.
-
-- **Modern Crafting Requirements**  
-  All build pieces use updated resources and require the correct crafting station (Forge, Black Forge, Workbench).
-
-- **Multiplayer Friendly**  
-  Properly syncs placement and destruction effects across servers.
-
-- **AssetBundle Powered**  
-  No extra downloads. Assets are included with the mod.
-
-- **Full Localization Support**  
-  Ready for English and other translations.
+Expand your building options in Valheim with a curated collection of handcrafted gates, fences, and walls. Designed for seamless integration with the game’s aesthetic, **Moonforged Gates & Fences** lets you create stronger fortifications and more beautiful settlements.
 
 ---
 
-## Screenshots
+## 🪓 What You Get
 
-![Main Gate](img/20250718144630_1.jpg)
-![Fences Example](img/20250718144645_1.jpg)
-![Viking Gate Example](img/20250718144657_1.jpg)
-![In-Game Preview](img/20250718144706_1.jpg)
+- Lots of new gates, fences, and walls for building  
+- Quality textures and authentic Viking style  
+- Easy to use—just install and build!  
 
 ---
 
-## Installation
+## 📸 Screenshots
 
-1. **Dependencies:**  
+### Grand Gate
+![Grand Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20171019.png)
+
+### Ornamental Fence
+![Ornamental Fence](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20170407.png)
+
+### Decorative Gate
+![Decorative Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20171037.png)
+
+### Fortified Entrance
+![Fortified Entrance](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20170044.png)
+
+### Chain Fence
+![Chain Fence](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20170005.png)
+
+### Old Style Gate
+![Old Style Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20164841.png)
+
+### New Fence Style
+![New Fence](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20165314.png)
+
+---
+
+## 🔨 How to Install
+
+1. **Install these first:**  
    - [BepInEx Pack](https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/)  
-   - [Jotunn](https://valheim.thunderstore.io/package/ValheimModding/Jotunn/)
+   - [Jotunn](https://valheim.thunderstore.io/package/ValheimModding/Jotunn/)  
 
-2. **Mod Files:**  
-   - Download this mod’s `.dll` and `gatesandfences` assetbundle.
-   - Place both in:  
+2. **Add this mod:**  
+   - Download the `.dll`  
+   - Put it in:  
      `BepInEx/plugins/MoonforgedGatesAndFences/`
 
-3. **Launch Valheim.**  
-   - Find the new build pieces in your Hammer crafting menu!
+3. **Launch Valheim:**  
+   - Your new build pieces will appear in the Hammer menu!  
 
 ---
 
-## Credits
+## 📝 Credits & Feedback
 
-- **Mod Author:** Caenos  
-- **Thanks:** Valheim modding community, [Jotunn](https://github.com/Valheim-Modding/Jotunn), [BepInEx](https://github.com/BepInEx/BepInEx)
-
----
-
-## Support & Feedback
-
-- [Thunderstore page](https://valheim.thunderstore.io/package/Caenos/MoonforgedGatesAndFences/)
-- [GitHub issues](https://github.com/Caen007/MoonforgedGatesAndFences/issues)
-- Or contact Caenos on Discord
+- Made by **Caenos**  
+- [GitHub issues](https://github.com/Caen007/MoonforgedGatesAndFences/issues)  
 
 ---
 
-Enjoy building with **Moonforged Gates & Fences**!
+Happy building!
