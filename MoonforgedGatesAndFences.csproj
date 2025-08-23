@@ -41,7 +41,8 @@
     <Reference Include="BepInEx">
       <HintPath>Libs\BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="Jotunn">
+    <Reference Include="Jotunn, Version=2.25.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\Jotunn.dll</HintPath>
     </Reference>
     <Reference Include="ServerSync">
@@ -85,7 +86,6 @@
     <Compile Include="Localizer.cs" />
     <Compile Include="PlacementWatcher.cs" />
     <Compile Include="LocalizationCache.cs" />
-    <Compile Include="ConfigSync.cs" />
     <Compile Include="RelicRegistrar.cs" />
     <Compile Include="MoonforgedGates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

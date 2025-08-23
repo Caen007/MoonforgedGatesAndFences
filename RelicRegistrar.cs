@@ -33,87 +33,118 @@ namespace Moonforged.GatesAndFences
 
     public static class RelicRegistrar
     {
+        private static bool wasAlreadyRegistered = false;
+
         public static readonly List<RelicRegistration> AllRegistrations = new List<RelicRegistration>
         {
-            new RelicRegistration("SilverGate", "Silver Gate", new[] {
-                new RequirementConfig("BlackMetal", 5), new RequirementConfig("Bronze", 1)
-            }, "A custom decorative piece.", "building", 0, "Forge"),
+            new RelicRegistration("v2_SilverGate", "Silver Gate", new[] {
+                new RequirementConfig("Silver", 5), new RequirementConfig("Crystal", 2)
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("DvergrForgedGate", "Dvergr Forged Gate", new[] {
+            new RelicRegistration("v2_DvergrForgedGate", "Dvergr Forged Gate", new[] {
                 new RequirementConfig("BlackMetal", 5), new RequirementConfig("Bronze", 1)
-            }, "Dvergr Forged Gate.", "building", 0, "Forge"),
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("DvergrForgedGate3m", "Dvergr Forged Gate 3m Tall", new[] {
+            new RelicRegistration("v2_DvergrForgedGate3m", "Dvergr Forged Gate 3m Tall", new[] {
                 new RequirementConfig("BlackMetal", 4), new RequirementConfig("Bronze", 1)
-            }, "Dvergr Forged Gate.", "building", 0, "Forge"),
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("DvergrForgedGate4m", "Dvergr Forged Gate 4m Tall", new[] {
+            new RelicRegistration("v2_DvergrForgedGate4m", "Dvergr Forged Gate 4m Tall", new[] {
                 new RequirementConfig("BlackMetal", 5), new RequirementConfig("Bronze", 1)
-            }, "Dvergr Forged Gate.", "building", 0, "Forge"),
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("EmberlightGate", "Emberlight Gate", new[] {
-                new RequirementConfig("BlackMetal", 5), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 1)
-            }, "Emberlight Gate.", "building", 0, "Forge"),
+            new RelicRegistration("v2_EmberlightGate", "Moonforged Emberlight Gate", new[] {
+                new RequirementConfig("BlackMetal", 5), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone",5), new RequirementConfig("Resin", 2)
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("ValkyriesEntrance", "Valkyrie's Entrance", new[] {
-                new RequirementConfig("BlackMetal", 5), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 1)
-            }, "A Gate to Valhalla.", "building", 0, "Forge"),
+            new RelicRegistration("v2_ValkyriesSideGate", "Valkyrie's Gate", new[] {
+                new RequirementConfig("Iron", 3), new RequirementConfig("Bronze", 1), new RequirementConfig("Silver", 2)
+            }, "A side gate to Valhalla.", "building", 0, "Forge"),
 
-            new RelicRegistration("ValkyriesEntranceSmall", "Valkyrie's Entrance Small", new[] {
-                new RequirementConfig("BlackMetal", 5), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 1)
-            }, "A side gate of Valhalla.", "building", 0, "Forge"),
+            new RelicRegistration("v2_NeoWall", "Valkyrie's New Wall", new[] {
+                new RequirementConfig("BlackMetal", 2), new RequirementConfig("Tar", 3),new RequirementConfig("Bronze", 1)
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("NeoWall", "Valkyrie's New Wall", new[] {
-                new RequirementConfig("BlackMetal", 4), new RequirementConfig("Tar", 4)
-            }, "Something new.", "building", 0, "Forge"),
-
-            new RelicRegistration("SilverFence", "Silver Fence", new[] {
+            new RelicRegistration("v2_SilverFence", "Silver Fence", new[] {
                 new RequirementConfig("Silver", 2), new RequirementConfig("Crystal", 2)
             }, "Silver Fence of the Howling Cavern.", "building", 0, "Forge"),
 
-            new RelicRegistration("IroncrestWardenFenceBK", "Ironcrest Warden Fence Black", new[] {
+            new RelicRegistration("v2_IroncrestWardenFenceBK", "Ironcrest Warden Fence Black", new[] {
                 new RequirementConfig("BlackMetal", 2)
-            }, "A custom decorative piece.", "building", 0, "Forge"),
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("IroncrestWardenFenceSilver", "Ironcrest Warden Fence Silver", new[] {
-                new RequirementConfig("BlackMetal", 2)
-            }, "A custom decorative piece.", "building", 0, "Forge"),
+            new RelicRegistration("v2_IroncrestWardenFenceSilver", "Ironcrest Warden Fence Silver", new[] {
+                new RequirementConfig("Silver", 2)
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("Stonewatch_Palisade", "Stonewatch Palisade", new[] {
+            new RelicRegistration("v2_Stonewatch_Palisade", "Stonewatch Palisade", new[] {
                 new RequirementConfig("BlackMetal", 2), new RequirementConfig("Stone", 4)
-            }, "A custom decorative piece.", "building", 0, "Forge"),
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("GildedRingwatchFence", "Gilded Ringwatch Fence", new[] {
+            new RelicRegistration("v2_GildedRingwatchFence", "Gilded Ringwatch Fence", new[] {
                 new RequirementConfig("Iron", 2), new RequirementConfig("Bronze", 1)
-            }, "A custom decorative piece.", "building", 0, "Forge"),
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("chain_fence", "Golden Chain Fence", new[] {
+            new RelicRegistration("v2_chain_fence", "Golden Chain Fence", new[] {
                 new RequirementConfig("BlackMetal", 1), new RequirementConfig("Bronze", 1)
-            }, "A custom decorative piece.", "building", 0, "Forge"),
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("GateToAsh", "Gate To Ash", new[] {
-                new RequirementConfig("Stone", 5), new RequirementConfig("Wood", 5), new RequirementConfig("BlackMetal", 1)
-            }, "A custom decorative piece.", "building", 0, "Workbench"),
+            new RelicRegistration("v2_VikingArchGate", "Viking Arch Gate", new[] {
+                new RequirementConfig("Stone", 5), new RequirementConfig("Wood", 5), new RequirementConfig("Iron", 2)
+            }, "", "building", 0, "piece_stonecutter"),
 
-            new RelicRegistration("Fence_01", "Echo Ring Barrier", new[] {
-                new RequirementConfig("Iron", 2), new RequirementConfig("Wood", 2)
-            }, "A custom decorative piece.", "building", 0, "Workbench"),
+            new RelicRegistration("v2_CurvedWoodFence", "Curved Wood Fence", new[] {
+                new RequirementConfig("Wood", 2), new RequirementConfig("FineWood", 2)
+            }, "", "building", 0, "Workbench"),
 
-            new RelicRegistration("BlackFence", "Black Fence", new[] {
+            new RelicRegistration("v2_BlackFence", "Black Fence", new[] {
                 new RequirementConfig("Iron", 2), new RequirementConfig("Bronze", 1)
-            }, "A custom decorative piece.", "building", 0, "BlackForge"),
+            }, "", "building", 0, "BlackForge"),
 
-            new RelicRegistration("StoneBlackFence", "Stone Black Fence", new[] {
+            new RelicRegistration("Wrought_iron_fence_1", "Wrought Iron Fence I", new[] {
+                new RequirementConfig("Iron", 2), new RequirementConfig("Bronze", 1)
+            }, "", "building", 0, "Forge"),
+
+            new RelicRegistration("v2_StoneBlackFence", "Stone Black Fence", new[] {
                 new RequirementConfig("Iron", 2), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 1)
-            }, "A custom decorative piece.", "building", 0, "BlackForge"),
+            }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("VikingGate", "Viking Gate", new[] {
-                new RequirementConfig("BlackMetal", 2), new RequirementConfig("Wood", 10)
+            new RelicRegistration("v2_VikingGate", "Viking Gate", new[] {
+                new RequirementConfig("Tar", 4), new RequirementConfig("Wood", 10)
             }, "Old Viking Gate.", "building", 0, "Workbench"),
 
-            new RelicRegistration("BlackFenceStonePillar", "Stone Black Fence Pillar", new[] {
-                new RequirementConfig("BlackMetal", 1), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 2)
-            }, "Build a Black Fence.", "building", 0, "Forge")
+            new RelicRegistration("v3_GardenGate", "Moonforged Garden Gate", new[] {
+                new RequirementConfig("Coal", 2), new RequirementConfig("Wood", 2)
+            }, "", "building", 0, "Workbench"),
+
+            new RelicRegistration("v3_GardenFence", "Moonforged Garden Fence", new[] {
+                new RequirementConfig("Coal", 2), new RequirementConfig("Wood", 2)
+            }, "", "building", 0, "Workbench"),
+
+           new RelicRegistration("Element03", "Moonforged Ivy Gate", new[] {
+                new RequirementConfig("FineWood", 5), new RequirementConfig("Wood", 10)
+            }, "", "building", 0, "Workbench"),
+
+            new RelicRegistration("Element04", "Moonforged Twinleaf Gate", new[] {
+                new RequirementConfig("FineWood", 5), new RequirementConfig("Wood", 10)
+            }, "", "building", 0, "Workbench"),
+
+            new RelicRegistration("Element0", "Moonforged Castle Gate", new[] {
+                new RequirementConfig("Iron", 5), new RequirementConfig("Wood", 20),new RequirementConfig("Tar", 10)
+            }, "", "building", 0, "Forge"),
+
+            new RelicRegistration("Element01", "Moonforged Archgate", new[] {
+                new RequirementConfig("Stone", 10), new RequirementConfig("Wood", 10),new RequirementConfig("Iron", 2)
+            }, "", "building", 0, "piece_stonecutter"),
+
+
+            new RelicRegistration("v2_BlackFenceStonePillar", "Stone Black Fence Pillar", new[] {
+                new RequirementConfig("Iron", 1), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 2),new RequirementConfig("Resin", 1)
+            }, "", "building", 0, "piece_stonecutter"),
+
+            new RelicRegistration("v2_BlackFenceStonePillar3m", "Stone Black Fence Pillar 3m", new[] {
+                new RequirementConfig("Iron", 1), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 2),new RequirementConfig("Resin", 1)
+            }, "", "building", 0, "piece_stonecutter")
         };
 
         public static IEnumerable<string> GetAllCategories()
@@ -127,7 +158,7 @@ namespace Moonforged.GatesAndFences
             switch (lower)
             {
                 case "building":
-                    return "Moonforged Structures";
+                    return MoonforgedGates.PlayerPreferredCategory.Value; // ← Inject the config here
                 default:
                     return category;
             }
@@ -135,8 +166,14 @@ namespace Moonforged.GatesAndFences
 
         public static void RegisterAllRelics(AssetBundle bundle)
         {
-            foreach (var reg in AllRegistrations)
-                RegisterRelic(bundle, reg);
+            if (wasAlreadyRegistered == false)
+            {
+                foreach (var reg in AllRegistrations)
+                {
+                    RegisterRelic(bundle, reg);
+                }
+                wasAlreadyRegistered = true;
+            }
         }
 
         private static void RegisterRelic(AssetBundle bundle, RelicRegistration reg)
@@ -166,9 +203,17 @@ namespace Moonforged.GatesAndFences
             GameObject destroyVFX = null;
             GameObject destroySFX = null;
 
+            // KEEP SFX/VFX NAMES **ORIGINAL** HERE:
             if (
-                reg.PrefabName == "Fence_01" ||
-                reg.PrefabName == "VikingGate"
+                reg.PrefabName == "v2_CurvedWoodFence" ||
+                reg.PrefabName == "v3_GardenGate" ||
+                reg.PrefabName == "Element04" ||
+                reg.PrefabName == "Element01" ||
+                reg.PrefabName == "Element0" ||
+                reg.PrefabName == "Element03" ||
+                reg.PrefabName == "v3_GardenFence" ||
+                reg.PrefabName == "Element02a" ||
+                reg.PrefabName == "v2_VikingGate"
             )
             {
                 if (ZNetScene.instance != null)
@@ -178,23 +223,23 @@ namespace Moonforged.GatesAndFences
                     destroyVFX = ZNetScene.instance.GetPrefab("vfx_destroyed_wood");
                     destroySFX = ZNetScene.instance.GetPrefab("sfx_wood_break");
                 }
-
             }
             else if (
-                reg.PrefabName == "SilverGate" ||
-                reg.PrefabName == "DvergrForgedGate" ||
-                reg.PrefabName == "DvergrForgedGate3m" ||
-                reg.PrefabName == "DvergrForgedGate4m" ||
-                reg.PrefabName == "EmberlightGate" ||
-                reg.PrefabName == "ValkyriesEntrance" ||
-                reg.PrefabName == "ValkyriesEntranceSmall" ||
-                reg.PrefabName == "GildedRingwatchFence" ||
-                reg.PrefabName == "SilverFence" ||
-                reg.PrefabName == "IroncrestWardenFenceBK" ||
-                reg.PrefabName == "IroncrestWardenFenceSilver" ||
-                reg.PrefabName == "GateToAsh" ||
-                reg.PrefabName == "BlackFence" ||
-                reg.PrefabName == "chain_fence"
+                reg.PrefabName == "v2_SilverGate" ||
+                reg.PrefabName == "v2_DvergrForgedGate" ||
+                reg.PrefabName == "v2_DvergrForgedGate3m" ||
+                reg.PrefabName == "v2_DvergrForgedGate4m" ||
+                reg.PrefabName == "v2_EmberlightGate" ||
+                reg.PrefabName == "v2_ValkyriesEntrance" ||
+                reg.PrefabName == "v2_ValkyriesSideGate" ||
+                reg.PrefabName == "v2_GildedRingwatchFence" ||
+                reg.PrefabName == "v2_SilverFence" ||
+                reg.PrefabName == "v2_IroncrestWardenFenceBK" ||
+                reg.PrefabName == "v2_IroncrestWardenFenceSilver" ||
+                reg.PrefabName == "v2_VikingArchGate" ||
+                reg.PrefabName == "v2_BlackFence" ||
+                reg.PrefabName == "Wrought_iron_fence_1" ||
+                reg.PrefabName == "v2_chain_fence"
             )
             {
                 if (ZNetScene.instance != null)
@@ -235,6 +280,7 @@ namespace Moonforged.GatesAndFences
             destroyFX.m_effectPrefabs = destroyList.ToArray();
             wear.m_destroyedEffect = destroyFX;
 
+            // Load ICON with new lowercase name
             Sprite icon = bundle.LoadAsset<Sprite>(reg.PrefabName.ToLowerInvariant());
             if (icon != null)
                 piece.m_icon = icon;

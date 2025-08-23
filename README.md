@@ -1,6 +1,6 @@
 # Moonforged Gates & Fences
 
-![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20171030.png)
+![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/New%20gates.png)
 
 Build your dream Viking settlement!  
 
@@ -12,42 +12,33 @@ Expand your building options in Valheim with a curated collection of handcrafted
 
 ## 🪓 What You Get
 
-- Lots of new gates, fences, and walls for building  
+- Dozens of new handcrafted gates, fences, and walls for building  
+- Unique styles: decorative, fortified, garden, chain, and more  
 - Quality textures and authentic Viking style  
 - Easy to use—just install and build!  
 
 ---
 
-## 📸 Screenshots
+## ⚙️ Config Options
+
+- **Custom Hammer Tab:** You can freely move **Moonforged Gates & Fences** into any build menu category you prefer.  
+  - Default is a custom “Moonforged” tab.  
+  - Changeable in the `BepInEx/config/` file (`MoonforgedGatesAndFences.cfg`).  
+  - Lets you organize pieces exactly how you want in your hammer menu.  
+
+---
 
 ## 📸 Screenshots
 
-## Grand Gate
-![Grand Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20171019.png)
+### New Gates Collection
+![New Gates](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/New%20gates.png)
 
-## Ornamental Fence
-![Ornamental Fence](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20170407.png)
+### Small Garden Gate & Fence
+![Small Garden Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/New%20Small%20Garden%20Gate%26Fence.png)
 
-## Decorative Gate
-![Decorative Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20171037.png)
+### Old Gates Collection
+![Old Gates](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Old%20Gates.png)
 
-## Fortified Entrance
-![Fortified Entrance](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20163431.png)
-
-## Chain Fence
-![Chain Fence](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20164841.png)
-
-## Old Style Gate
-![Old Style Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20165005.png)
-
-## New Fence Style
-![New Fence Style](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20165314.png)
-
-## Wide Showcase
-![Wide Showcase](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20171030.png)
-
-## Pillars + Gate (Night)
-![Pillars + Gate (Night)](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Screenshot%202025-08-21%20170400.png)
 ---
 
 ## 🔨 How to Install

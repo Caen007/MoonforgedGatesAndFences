@@ -4,8 +4,10 @@ using BepInEx;
 using UnityEngine;
 using Jotunn.Managers;
 using HarmonyLib;
+using System.Collections;
 using System.Collections.Generic;
-using MoonforgedGatesAndFences;
+using Jotunn.Utils;
+using BepInEx.Configuration;
 
 namespace Moonforged.GatesAndFences
 {
@@ -15,22 +17,12 @@ namespace Moonforged.GatesAndFences
     {
         public const string PluginGUID = "Moonforged.GatesAndFences";
         public const string PluginName = "Moonforged Gates & Fences";
-        public const string PluginVersion = "1.0.0";
+        public const string PluginVersion = "1.0.2";
 
         private AssetBundle gatesBundle;
-
         private static readonly List<GameObject> placedObjects = new List<GameObject>();
 
-        public static void TrackAllPrefabsInBundle(AssetBundle bundle)
-        {
-            foreach (var prefab in bundle.LoadAllAssets<GameObject>())
-            {
-                if (prefab != null && prefab.GetComponent<PlacementWatcher>() == null)
-                {
-                    prefab.AddComponent<PlacementWatcher>().RegisterList = placedObjects;
-                }
-            }
-        }
+        public static ConfigEntry<string> PlayerPreferredCategory;
 
         private void Awake()
         {
@@ -47,13 +39,42 @@ namespace Moonforged.GatesAndFences
 
             TrackAllPrefabsInBundle(gatesBundle);
 
-            foreach (var category in RelicRegistrar.GetAllCategories())
+            PlayerPreferredCategory = Config.Bind("General",
+                "CustomHammerTab",
+                "Moonforged Structures",
+                "Set the hammer tab where this mod's pieces should appear (e.g., Building, Furniture, Moonforged Structures)"
+            );
+
+            foreach (string category in RelicRegistrar.GetAllCategories())
+            {
                 PieceManager.Instance.AddPieceCategory(category);
+            }
 
             PrefabManager.OnPrefabsRegistered += () =>
             {
-                RelicRegistrar.RegisterAllRelics(gatesBundle);
+                StartCoroutine(DelayedRegister(gatesBundle));
             };
+        }
+
+        private IEnumerator DelayedRegister(AssetBundle bundle)
+        {
+            while (ZNetScene.instance == null)
+            {
+                yield return null;
+            }
+
+            RelicRegistrar.RegisterAllRelics(bundle);
+        }
+
+        public static void TrackAllPrefabsInBundle(AssetBundle bundle)
+        {
+            foreach (GameObject prefab in bundle.LoadAllAssets<GameObject>())
+            {
+                if (prefab != null && prefab.GetComponent<PlacementWatcher>() == null)
+                {
+                    prefab.AddComponent<PlacementWatcher>().RegisterList = placedObjects;
+                }
+            }
         }
     }
 
@@ -61,7 +82,7 @@ namespace Moonforged.GatesAndFences
     {
         public static AssetBundle LoadBundle(string resourcePath)
         {
-            var assembly = Assembly.GetExecutingAssembly();
+            Assembly assembly = Assembly.GetExecutingAssembly();
             using (Stream stream = assembly.GetManifestResourceStream(resourcePath))
             {
                 if (stream == null)
