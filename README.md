@@ -4,7 +4,9 @@
 
 Build your dream Viking settlement!  
 
-**Moonforged Gates & Fences** adds a variety of new gates, fences, and walls to Valheim.  
+**Moonforged Gates & Fences** 
+
+- adds a variety of new gates, fences, and walls to Valheim.  
 
 Expand your building options in Valheim with a curated collection of handcrafted gates, fences, and walls. Designed for seamless integration with the game’s aesthetic, **Moonforged Gates & Fences** lets you create stronger fortifications and more beautiful settlements.
 
@@ -60,8 +62,16 @@ Expand your building options in Valheim with a curated collection of handcrafted
 ## 📝 Credits & Feedback
 
 - Made by **Caenos**  
-- [GitHub issues](https://github.com/Caen007/MoonforgedGatesAndFences/issues)  
+- - Join the community on [Discord](https://discord.gg/pawMPNDx) for feedback, support, and sneak peeks.
 
+
+## Special thanks :
+
+- Marsarah – for mentoring and guidance.
+
+- Magic Mike – for helping refine and troubleshoot gate animations.
+
+- The Undertaker – for testing and providing valuable feedback.
 ---
 
 Happy building!
