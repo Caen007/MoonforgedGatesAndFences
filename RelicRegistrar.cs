@@ -110,7 +110,7 @@ namespace Moonforged.GatesAndFences
             }, "", "building", 0, "Forge"),
 
             new RelicRegistration("v1_VikingGate", "Viking Gate", new[] {
-                new RequirementConfig("coal", 4), new RequirementConfig("Wood", 10)
+                new RequirementConfig("Coal", 4), new RequirementConfig("Wood", 10)
             }, "Old Viking Gate.", "building", 0, "Workbench"),
 
             new RelicRegistration("v1_GardenGate", "Moonforged Garden Gate", new[] {
@@ -147,7 +147,11 @@ namespace Moonforged.GatesAndFences
 
             new RelicRegistration("v1_BlackFenceStonePillar3m", "Stone Black Fence Pillar 3m", new[] {
                 new RequirementConfig("Iron", 1), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 2),new RequirementConfig("Resin", 1)
-            }, "", "building", 0, "piece_stonecutter")
+            }, "", "building", 0, "piece_stonecutter"),
+
+                        new RelicRegistration("M_WolfGate", "Moonforged Fenrir Gate", new[] {
+                new RequirementConfig("Iron", 20),new RequirementConfig("Stone", 40),new RequirementConfig("GreydwarfEye", 10)
+            }, "Twin wolves guard the threshold, forged beneath the moon’s cold fire. Their silent howls echo through the ages", "building", 0, "Forge")
         };
 
         public static IEnumerable<string> GetAllCategories()
@@ -242,6 +246,7 @@ namespace Moonforged.GatesAndFences
                 reg.PrefabName == "v1_VikingArchGate" ||
                 reg.PrefabName == "v1_BlackFence" ||
                 reg.PrefabName == "v1_Wrought_iron_fence_1" ||
+                reg.PrefabName == "M_WolfGate" ||
                 reg.PrefabName == "v1_chain_fence"
             )
             {

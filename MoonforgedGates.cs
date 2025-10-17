@@ -17,7 +17,7 @@ namespace Moonforged.GatesAndFences
     {
         public const string PluginGUID = "Moonforged.GatesAndFences";
         public const string PluginName = "Moonforged Gates & Fences";
-        public const string PluginVersion = "1.0.3";
+        public const string PluginVersion = "1.0.5";
 
         private AssetBundle gatesBundle;
         private static readonly List<GameObject> placedObjects = new List<GameObject>();

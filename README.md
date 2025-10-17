@@ -32,8 +32,9 @@ Expand your building options in Valheim with a curated collection of handcrafted
 
 ## 📸 Screenshots
 
-### New Gates Collection
-![New Gates](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/New%20gates.png)
+### New Gate : Moonforged Fenrir Gate
+### Twin wolves guard the threshold, forged beneath the moon’s cold fire. Their silent howls echo through the ages.
+![New](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/New%20gates.png)
 
 ### Small Garden Gate & Fence
 ![Small Garden Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/New%20Small%20Garden%20Gate%26Fence.png)
@@ -62,7 +63,8 @@ Expand your building options in Valheim with a curated collection of handcrafted
 ## 📝 Credits & Feedback
 
 - Made by **Caenos**  
-- - Join the community on [Discord](https://discord.gg/pawMPNDx) for feedback, support, and sneak peeks.
+- - Join the community on [Discord](https://discord.gg/wwGJqd7P) for feedback, support, and sneak peeks.
+- - If the invite link expires, you can find me in the Thunderstore Discord.
 
 
 ## Special thanks :
