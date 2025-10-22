@@ -5,8 +5,6 @@ using Jotunn.Configs;
 using UnityEngine;
 using Jotunn.Managers;
 
-//Test
-
 namespace Moonforged.GatesAndFences
 {
     public class RelicRegistration
