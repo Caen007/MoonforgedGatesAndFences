@@ -5,6 +5,8 @@ using Jotunn.Configs;
 using UnityEngine;
 using Jotunn.Managers;
 
+//Test
+
 namespace Moonforged.GatesAndFences
 {
     public class RelicRegistration
@@ -149,7 +151,7 @@ namespace Moonforged.GatesAndFences
                 new RequirementConfig("Iron", 1), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 2),new RequirementConfig("Resin", 1)
             }, "", "building", 0, "piece_stonecutter"),
 
-                        new RelicRegistration("M_WolfGate", "Moonforged Fenrir Gate", new[] {
+            new RelicRegistration("M_WolfGate", "Moonforged Fenrir Gate", new[] {
                 new RequirementConfig("Iron", 20),new RequirementConfig("Stone", 40),new RequirementConfig("GreydwarfEye", 10)
             }, "Twin wolves guard the threshold, forged beneath the moon’s cold fire. Their silent howls echo through the ages", "building", 0, "Forge")
         };
