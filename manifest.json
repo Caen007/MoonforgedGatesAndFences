@@ -1,0 +1,15 @@
+{
+    "name": "MoonforgedGatesAndFences",
+    "version_number": "1.0.6",
+    "website_url": "https://github.com/Caen007/MoonforgedGatesAndFences",
+    "description": "Expand your Valheim building options with beautifully crafted gates, fences, and walls. Moonforged Gates & Fences integrates seamlessly into the game, offering high-quality new designs for your settlements. Multiplayer compatible.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2333",
+    "ValheimModding-Jotunn-2.26.1"
+  ],
+    "categories": [
+        "build",
+        "gates",
+        "structures"
+    ]
+}

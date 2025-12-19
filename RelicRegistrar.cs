@@ -149,9 +149,31 @@ namespace Moonforged.GatesAndFences
                 new RequirementConfig("Iron", 1), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 2),new RequirementConfig("Resin", 1)
             }, "", "building", 0, "piece_stonecutter"),
 
-                        new RelicRegistration("M_WolfGate", "Moonforged Fenrir Gate", new[] {
+            new RelicRegistration("M_WolfGate", "Moonforged Fenrir Gate", new[] {
                 new RequirementConfig("Iron", 20),new RequirementConfig("Stone", 40),new RequirementConfig("GreydwarfEye", 10)
-            }, "Twin wolves guard the threshold, forged beneath the moon’s cold fire. Their silent howls echo through the ages", "building", 0, "Forge")
+            }, "Twin wolves guard the threshold, forged beneath the moon’s cold fire. Their silent howls echo through the ages", "building", 0, "Forge"),
+
+
+            new RelicRegistration("M_Hobbit_Door", "Hobbit House Door", new[] {
+                new RequirementConfig("Iron", 5),new RequirementConfig("Stone", 20),new RequirementConfig("GreydwarfEye", 10)
+            }, "", "building", 0, "Forge"),
+
+            new RelicRegistration("M_Garden_Gate_Arch", "Moonforged Arched Garden Gate", new[] {
+                new RequirementConfig("Dandelion", 5),new RequirementConfig("Thistle", 5),new RequirementConfig("Mushroom", 10)
+            }, "", "building", 0, "Workbench"),
+
+             new RelicRegistration("M_Gargoyle_Gate", "Moonforged Gargoyle Gate", new[] {
+                new RequirementConfig("Iron", 5),new RequirementConfig("Stone", 20),new RequirementConfig("GreydwarfEye", 10)
+            }, "", "building", 0, "Forge"),
+
+                          new RelicRegistration("M_GargoyleFence_5m", "Moonforged Gargoyle Fence 5m", new[] {
+                new RequirementConfig("Iron", 5),new RequirementConfig("Stone", 20),new RequirementConfig("GreydwarfEye", 10)
+            }, "", "building", 0, "Forge"),
+
+            new RelicRegistration("M_MedievalMetalDoor", "Medieval Metal Door", new[] {
+                new RequirementConfig("Iron", 5),new RequirementConfig("Stone", 20),new RequirementConfig("GreydwarfEye", 10)
+            }, "", "building", 0, "Forge"),
+
         };
 
         public static IEnumerable<string> GetAllCategories()
@@ -214,6 +236,7 @@ namespace Moonforged.GatesAndFences
             if (
                 reg.PrefabName == "v1_CurvedWoodFence" ||
                 reg.PrefabName == "v1_GardenGate" ||
+                reg.PrefabName == "M_Hobbit_Door" ||
                 reg.PrefabName == "v1_Element04" ||
                 reg.PrefabName == "v1_Element01" ||
                 reg.PrefabName == "v1_Element0" ||
