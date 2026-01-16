@@ -38,19 +38,19 @@ namespace Moonforged.GatesAndFences
         public static readonly List<RelicRegistration> AllRegistrations = new List<RelicRegistration>
         {
             new RelicRegistration("v1_SilverGate", "Silver Gate", new[] {
-                new RequirementConfig("Silver", 5), new RequirementConfig("Crystal", 2)
+                new RequirementConfig("Silver", 5), new RequirementConfig("Tin", 2)
             }, "", "building", 0, "Forge"),
 
             new RelicRegistration("v1_DvergrForgedGate", "Dvergr Forged Gate", new[] {
-                new RequirementConfig("BlackMetal", 5), new RequirementConfig("Bronze", 1)
+                new RequirementConfig("BlackMetal", 5), new RequirementConfig("Bronze", 5)
             }, "", "building", 0, "Forge"),
 
             new RelicRegistration("v1_DvergrForgedGate3m", "Dvergr Forged Gate 3m Tall", new[] {
-                new RequirementConfig("BlackMetal", 4), new RequirementConfig("Bronze", 1)
+                new RequirementConfig("BlackMetal", 2), new RequirementConfig("Bronze", 1)
             }, "", "building", 0, "Forge"),
 
             new RelicRegistration("v1_DvergrForgedGate4m", "Dvergr Forged Gate 4m Tall", new[] {
-                new RequirementConfig("BlackMetal", 5), new RequirementConfig("Bronze", 1)
+                new RequirementConfig("BlackMetal", 2), new RequirementConfig("Bronze", 1)
             }, "", "building", 0, "Forge"),
 
             new RelicRegistration("v1_EmberlightGate", "Moonforged Emberlight Gate", new[] {
@@ -62,19 +62,19 @@ namespace Moonforged.GatesAndFences
             }, "A side gate to Valhalla.", "building", 0, "Forge"),
 
             new RelicRegistration("v1_NeoWall", "Valkyrie's New Wall", new[] {
-                new RequirementConfig("BlackMetal", 2), new RequirementConfig("Tar", 3),new RequirementConfig("Bronze", 1)
+                new RequirementConfig("BlackMetal", 1), new RequirementConfig("Tar", 1),new RequirementConfig("Bronze", 1)
             }, "", "building", 0, "Forge"),
 
             new RelicRegistration("v1_SilverFence", "Silver Fence", new[] {
-                new RequirementConfig("Silver", 2), new RequirementConfig("Crystal", 2)
+                new RequirementConfig("Silver", 2)
             }, "Silver Fence of the Howling Cavern.", "building", 0, "Forge"),
 
             new RelicRegistration("v1_IroncrestWardenFenceBK", "Ironcrest Warden Fence Black", new[] {
-                new RequirementConfig("BlackMetal", 2)
+                new RequirementConfig("Iron", 1)
             }, "", "building", 0, "Forge"),
 
             new RelicRegistration("v1_IroncrestWardenFenceSilver", "Ironcrest Warden Fence Silver", new[] {
-                new RequirementConfig("Silver", 2)
+                new RequirementConfig("Silver", 1)
             }, "", "building", 0, "Forge"),
 
             new RelicRegistration("v1_Stonewatch_Palisade", "Stonewatch Palisade", new[] {
@@ -86,12 +86,12 @@ namespace Moonforged.GatesAndFences
             }, "", "building", 0, "Forge"),
 
             new RelicRegistration("v1_chain_fence", "Golden Chain Fence", new[] {
-                new RequirementConfig("BlackMetal", 1), new RequirementConfig("Bronze", 1)
+                new RequirementConfig("Bronze", 1)
             }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("v1_VikingArchGate", "Viking Arch Gate", new[] {
-                new RequirementConfig("Stone", 5), new RequirementConfig("Wood", 5), new RequirementConfig("Iron", 2)
-            }, "", "building", 0, "piece_stonecutter"),
+            new RelicRegistration("v1_VikingArchGate", "Viking Castle Arch Gate", new[] {
+                new RequirementConfig("Stone", 5), new RequirementConfig("Wood", 5), new RequirementConfig("Coal", 5)
+            }, "", "building", 0, "Workbench"),
 
             new RelicRegistration("v1_CurvedWoodFence", "Curved Wood Fence", new[] {
                 new RequirementConfig("Wood", 2), new RequirementConfig("FineWood", 2)
@@ -99,18 +99,18 @@ namespace Moonforged.GatesAndFences
 
             new RelicRegistration("v1_BlackFence", "Black Fence", new[] {
                 new RequirementConfig("Iron", 2), new RequirementConfig("Bronze", 1)
-            }, "", "building", 0, "BlackForge"),
+            }, "", "building", 0, "Forge"),
 
             new RelicRegistration("v1_Wrought_iron_fence_1", "Wrought Iron Fence I", new[] {
                 new RequirementConfig("Iron", 2), new RequirementConfig("Bronze", 1)
             }, "", "building", 0, "Forge"),
 
             new RelicRegistration("v1_StoneBlackFence", "Stone Black Fence", new[] {
-                new RequirementConfig("Iron", 2), new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 1)
+                new RequirementConfig("Bronze", 1), new RequirementConfig("Stone", 1)
             }, "", "building", 0, "Forge"),
 
-            new RelicRegistration("v1_VikingGate", "Viking Gate", new[] {
-                new RequirementConfig("Coal", 4), new RequirementConfig("Wood", 10)
+            new RelicRegistration("v1_VikingGate", "Moonforged Viking Gate", new[] {
+                new RequirementConfig("Coal", 4), new RequirementConfig("Wood", 10), new RequirementConfig("RoundLog", 15),new RequirementConfig("LeatherScraps", 10),
             }, "Old Viking Gate.", "building", 0, "Workbench"),
 
             new RelicRegistration("v1_GardenGate", "Moonforged Garden Gate", new[] {
@@ -150,7 +150,7 @@ namespace Moonforged.GatesAndFences
             }, "", "building", 0, "piece_stonecutter"),
 
             new RelicRegistration("M_WolfGate", "Moonforged Fenrir Gate", new[] {
-                new RequirementConfig("Iron", 20),new RequirementConfig("Stone", 40),new RequirementConfig("GreydwarfEye", 10)
+                new RequirementConfig("Iron", 10),new RequirementConfig("Stone", 40),new RequirementConfig("GreydwarfEye", 10)
             }, "Twin wolves guard the threshold, forged beneath the moon’s cold fire. Their silent howls echo through the ages", "building", 0, "Forge"),
 
 
@@ -172,7 +172,11 @@ namespace Moonforged.GatesAndFences
 
             new RelicRegistration("M_MedievalMetalDoor", "Medieval Metal Door", new[] {
                 new RequirementConfig("Iron", 5),new RequirementConfig("Stone", 20),new RequirementConfig("GreydwarfEye", 10)
-            }, "", "building", 0, "Forge"),
+            }, "", "building", 0, "piece_stonecutter"),
+
+                        new RelicRegistration("Moonforged_Silent_Hill_Gate", "Moonforged Swamp Gate", new[] {
+                new RequirementConfig("Wood", 15),new RequirementConfig("ElderBark", 15)
+            }, "", "building", 0, "Workbench")
 
         };
 
@@ -244,6 +248,7 @@ namespace Moonforged.GatesAndFences
                 reg.PrefabName == "v1_GardenFence" ||
                 reg.PrefabName == "v1_Element02a" ||
                 reg.PrefabName == "v1_MoonforgedIronboundGate" ||
+                reg.PrefabName == "Moonforged_Silent_Hill_Gate" ||
                 reg.PrefabName == "v1_VikingGate"
             )
             {

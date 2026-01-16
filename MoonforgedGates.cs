@@ -17,7 +17,7 @@ namespace Moonforged.GatesAndFences
     {
         public const string PluginGUID = "Moonforged.GatesAndFences";
         public const string PluginName = "Moonforged Gates & Fences";
-        public const string PluginVersion = "1.0.6";
+        public const string PluginVersion = "1.0.7";
 
         private AssetBundle gatesBundle;
         private static readonly List<GameObject> placedObjects = new List<GameObject>();
@@ -41,8 +41,8 @@ namespace Moonforged.GatesAndFences
 
             PlayerPreferredCategory = Config.Bind("General",
                 "CustomHammerTab",
-                "Moonforged Structures",
-                "Set the hammer tab where this mod's pieces should appear (e.g., Building, Furniture, Moonforged Structures)"
+                "MoonforgedGatesAndFences",
+                "Set the hammer tab where this mod's pieces should appear (e.g., Building, Furniture, MoonforgedGatesAndFences)"
             );
 
             foreach (string category in RelicRegistrar.GetAllCategories())
