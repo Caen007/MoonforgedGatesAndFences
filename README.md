@@ -1,8 +1,8 @@
 # Moonforged Gates & Fences
 
-![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/New%20gates.png)
+![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/M_Gargoyle_Gate.png)
 
-Build your dream Viking settlement!  
+- Build your dream Viking settlement!  
 
 **Moonforged Gates & Fences** 
 
@@ -30,17 +30,29 @@ Expand your building options in Valheim with a curated collection of handcrafted
 
 ---
 
-## 📸 Screenshots
 
-### New Gate : Moonforged Fenrir Gate
-### Twin wolves guard the threshold, forged beneath the moon’s cold fire. Their silent howls echo through the ages.
-![New](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/New%20gates.png)
+---
+# 📸 Screenshots
 
-### Small Garden Gate & Fence
-![Small Garden Gate](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/New%20Small%20Garden%20Gate%26Fence.png)
+# New Gate : 1.0.7 Update.
+
+## Rewamped the Viking gate:
+### Old Gate : 
+
+![Old Gate ](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/oldVG.png)
+
+### New Gate
+
+![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/NewVG.png)
+
+---
+
+## A gate inspired by the Silent Hill Movie.
+
+![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/SilentHill.png)
 
 ### Old Gates Collection
-![Old Gates](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/Old%20Gates.png)
+![Old Gates](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/All.png)
 
 ---
 
