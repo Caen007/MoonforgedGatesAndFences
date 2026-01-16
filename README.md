@@ -1,6 +1,6 @@
 # Moonforged Gates & Fences
 
-![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/M_Gargoyle_Gate.png)
+![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/NewVG.png)
 
 - Build your dream Viking settlement!  
 
