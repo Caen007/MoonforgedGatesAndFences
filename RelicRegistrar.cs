@@ -121,6 +121,38 @@ namespace Moonforged.GatesAndFences
                 new RequirementConfig("Coal", 2), new RequirementConfig("Wood", 2)
             }, "", "building", 0, "Workbench"),
 
+            new RelicRegistration("M_Garden_Fence1x1", "Small Garden Fence 1x1", new[] {
+                new RequirementConfig("Wood", 2)
+            }, "", "building", 0, "Workbench"),
+
+            new RelicRegistration("M_Garden_Fence_Medium", "Medium Garden Fence", new[] {
+                new RequirementConfig("Wood", 3)
+            }, "", "building", 0, "Workbench"),
+
+            new RelicRegistration("M_Garden_Pole1x1", "Small Garden Pole 1x1", new[] {
+                new RequirementConfig("Wood", 1)
+            }, "", "building", 0, "Workbench"),
+
+            new RelicRegistration("M_Garden_Gate_Small", "Small Garden Gate", new[] {
+                new RequirementConfig("Wood", 12)
+            }, "", "building", 0, "Workbench"),
+
+            new RelicRegistration("M_Garden_Fence2x2", "Garden Fence 2x2", new[] {
+                new RequirementConfig("Wood", 4)
+            }, "", "building", 0, "Workbench"),
+
+            new RelicRegistration("M_Garden_Fence3x2", "Garden Fence 3x2", new[] {
+                new RequirementConfig("Wood", 6)
+            }, "", "building", 0, "Workbench"),
+
+            new RelicRegistration("M_Garden_Pole2x2", "Garden Pole 2x2", new[] {
+                new RequirementConfig("Wood", 2)
+            }, "", "building", 0, "Workbench"),
+
+            new RelicRegistration("M_Garden_Gate", "Garden Gate", new[] {
+                new RequirementConfig("Wood", 24)
+            }, "", "building", 0, "Workbench"),
+
            new RelicRegistration("v1_Element03", "Moonforged Ivy Gate", new[] {
                 new RequirementConfig("FineWood", 5), new RequirementConfig("Wood", 10)
             }, "", "building", 0, "Workbench"),
@@ -176,8 +208,12 @@ namespace Moonforged.GatesAndFences
 
                         new RelicRegistration("Moonforged_Silent_Hill_Gate", "Moonforged Swamp Gate", new[] {
                 new RequirementConfig("Wood", 15),new RequirementConfig("ElderBark", 15)
-            }, "", "building", 0, "Workbench")
+            }, "", "building", 0, "Workbench"),
 
+
+                        new RelicRegistration("Wolf_Door", "Moonforged Stone Wolf Door", new[] {
+                new RequirementConfig("Stone", 30),new RequirementConfig("Crystal", 10),new RequirementConfig("Iron", 10),
+            }, "", "building", 0, "Forge")
         };
 
         public static IEnumerable<string> GetAllCategories()
@@ -187,7 +223,9 @@ namespace Moonforged.GatesAndFences
 
         private static string CategoryToTab(string category)
         {
-            var lower = category.ToLower();
+            if (string.IsNullOrWhiteSpace(category)) return MoonforgedGates.PlayerPreferredCategory.Value;
+
+            var lower = category.ToLowerInvariant();
             switch (lower)
             {
                 case "building":
@@ -249,7 +287,15 @@ namespace Moonforged.GatesAndFences
                 reg.PrefabName == "v1_Element02a" ||
                 reg.PrefabName == "v1_MoonforgedIronboundGate" ||
                 reg.PrefabName == "Moonforged_Silent_Hill_Gate" ||
-                reg.PrefabName == "v1_VikingGate"
+                reg.PrefabName == "v1_VikingGate" ||
+                reg.PrefabName == "M_Garden_Fence2x2" ||
+                reg.PrefabName == "M_Garden_Fence3x2" ||
+                reg.PrefabName == "M_Garden_Pole2x2" ||
+                reg.PrefabName == "M_Garden_Gate" ||
+                reg.PrefabName == "M_Garden_Fence1x1" ||
+                reg.PrefabName == "M_Garden_Fence_Medium" ||
+                reg.PrefabName == "M_Garden_Pole1x1" ||
+                reg.PrefabName == "M_Garden_Gate_Small"
             )
             {
                 if (ZNetScene.instance != null)
@@ -316,8 +362,9 @@ namespace Moonforged.GatesAndFences
             destroyFX.m_effectPrefabs = destroyList.ToArray();
             wear.m_destroyedEffect = destroyFX;
 
-            // Load ICON with new lowercase name
-            Sprite icon = bundle.LoadAsset<Sprite>(reg.PrefabName.ToLowerInvariant());
+            Sprite icon = bundle.LoadAsset<Sprite>(reg.PrefabName);
+            if (icon == null)
+                icon = bundle.LoadAsset<Sprite>(reg.PrefabName.ToLowerInvariant());
             if (icon != null)
                 piece.m_icon = icon;
 

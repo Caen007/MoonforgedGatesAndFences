@@ -1,13 +1,11 @@
-﻿using System.Reflection;
+﻿using System.Collections;
 using System.IO;
+using System.Reflection;
 using BepInEx;
-using UnityEngine;
-using Jotunn.Managers;
-using HarmonyLib;
-using System.Collections;
-using System.Collections.Generic;
-using Jotunn.Utils;
 using BepInEx.Configuration;
+using HarmonyLib;
+using Jotunn.Managers;
+using UnityEngine;
 
 namespace Moonforged.GatesAndFences
 {
@@ -17,27 +15,28 @@ namespace Moonforged.GatesAndFences
     {
         public const string PluginGUID = "Moonforged.GatesAndFences";
         public const string PluginName = "Moonforged Gates & Fences";
-        public const string PluginVersion = "1.0.7";
+        public const string PluginVersion = "1.0.9";
 
         private AssetBundle gatesBundle;
-        private static readonly List<GameObject> placedObjects = new List<GameObject>();
+        private Harmony harmony;
 
         public static ConfigEntry<string> PlayerPreferredCategory;
 
         private void Awake()
         {
-            new Harmony("moonforged.gates.scalingdebug").PatchAll();
+            harmony = new Harmony("moonforged.gates.scalingdebug");
+            harmony.PatchAll();
 
-            string resourcePath = "MoonforgedGatesAndFences.gatesandfences";
+            string resourcePath = GetPlatformBundleResourcePath();
             gatesBundle = EmbeddedAssetBundleLoader.LoadBundle(resourcePath);
 
             if (gatesBundle == null)
             {
-                Logger.LogError("Failed to load embedded AssetBundle.");
+                Logger.LogError("Failed to load embedded AssetBundle: " + resourcePath);
                 return;
             }
 
-            TrackAllPrefabsInBundle(gatesBundle);
+            Logger.LogInfo("Loaded embedded AssetBundle: " + resourcePath);
 
             PlayerPreferredCategory = Config.Bind("General",
                 "CustomHammerTab",
@@ -50,10 +49,30 @@ namespace Moonforged.GatesAndFences
                 PieceManager.Instance.AddPieceCategory(category);
             }
 
-            PrefabManager.OnPrefabsRegistered += () =>
+            PrefabManager.OnPrefabsRegistered += OnPrefabsRegistered;
+        }
+
+        private static string GetPlatformBundleResourcePath()
+        {
+            switch (Application.platform)
             {
-                StartCoroutine(DelayedRegister(gatesBundle));
-            };
+                case RuntimePlatform.OSXPlayer:
+                case RuntimePlatform.OSXEditor:
+                    return "MoonforgedGatesAndFences.gatesandfences_mac";
+
+                default:
+                    return "MoonforgedGatesAndFences.gatesandfences_windows";
+            }
+        }
+
+        private void OnDestroy()
+        {
+            PrefabManager.OnPrefabsRegistered -= OnPrefabsRegistered;
+        }
+
+        private void OnPrefabsRegistered()
+        {
+            StartCoroutine(DelayedRegister(gatesBundle));
         }
 
         private IEnumerator DelayedRegister(AssetBundle bundle)
@@ -64,17 +83,6 @@ namespace Moonforged.GatesAndFences
             }
 
             RelicRegistrar.RegisterAllRelics(bundle);
-        }
-
-        public static void TrackAllPrefabsInBundle(AssetBundle bundle)
-        {
-            foreach (GameObject prefab in bundle.LoadAllAssets<GameObject>())
-            {
-                if (prefab != null && prefab.GetComponent<PlacementWatcher>() == null)
-                {
-                    prefab.AddComponent<PlacementWatcher>().RegisterList = placedObjects;
-                }
-            }
         }
     }
 
@@ -90,9 +98,12 @@ namespace Moonforged.GatesAndFences
                     Debug.LogError("AssetBundle resource not found: " + resourcePath);
                     return null;
                 }
-                byte[] buffer = new byte[stream.Length];
-                stream.Read(buffer, 0, buffer.Length);
-                return AssetBundle.LoadFromMemory(buffer);
+
+                using (var memoryStream = new MemoryStream())
+                {
+                    stream.CopyTo(memoryStream);
+                    return AssetBundle.LoadFromMemory(memoryStream.ToArray());
+                }
             }
         }
     }
