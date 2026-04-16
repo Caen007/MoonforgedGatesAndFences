@@ -1,91 +1,85 @@
 # Moonforged Gates & Fences
 
-![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/NewVG.png)
+## Now supports Mac too !!
+## Meadows Gates and Fences by popular request :)
 
-- Build your dream Viking settlement!  
+## New Gate - 1.0.9 Update
 
-**Moonforged Gates & Fences** 
+![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/MeadowsFences.png)
 
-- adds a variety of new gates, fences, and walls to Valheim.  
+![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/WolfGate.png)
 
-Expand your building options in Valheim with a curated collection of handcrafted gates, fences, and walls. Designed for seamless integration with the game’s aesthetic, **Moonforged Gates & Fences** lets you create stronger fortifications and more beautiful settlements.
+- The long-requested Meadows builds are here.
+- As many of you asked, I added a few new gates and fences for your gardens and yards.
+- I promise more will come once I have more time to tinker in Blender and create new ones.
 
----
+**Moonforged Gates & Fences** adds a variety of new gates, fences, and walls to Valheim.
 
-## 🪓 What You Get
-
-- Dozens of new handcrafted gates, fences, and walls for building  
-- Unique styles: decorative, fortified, garden, chain, and more  
-- Quality textures and authentic Viking style  
-- Easy to use—just install and build!  
+Expand your building options in Valheim with a curated collection of handcrafted gates, fences, and walls. Designed to blend naturally with the game’s aesthetic, **Moonforged Gates & Fences** lets you create stronger fortifications and more beautiful settlements.
 
 ---
 
-## ⚙️ Config Options
+## What You Get
 
-- **Custom Hammer Tab:** You can freely move **Moonforged Gates & Fences** into any build menu category you prefer.  
-  - Default is a custom “Moonforged” tab.  
-  - Changeable in the `BepInEx/config/` file (`MoonforgedGatesAndFences.cfg`).  
-  - Lets you organize pieces exactly how you want in your hammer menu.  
-
----
-
-
----
-# 📸 Screenshots
-
-# New Gate : 1.0.7 Update.
-
-## Rewamped the Viking gate:
-### Old Gate : 
-
-![Old Gate ](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/oldVG.png)
-
-### New Gate
-
-![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/NewVG.png)
+- Dozens of handcrafted gates, fences, and walls
+- Unique styles: decorative, fortified, garden, chain, and more
+- Quality textures with an authentic Viking feel
+- Easy to use — just install and build
+- Supports Vulkan
+- Now supports Mac
 
 ---
 
-## A gate inspired by the Silent Hill Movie.
+## Config Options
 
-![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/SilentHill.png)
+- **Custom Hammer Tab:** You can freely move **Moonforged Gates & Fences** into any build menu category you prefer.
+  - Default is a custom **Moonforged** tab
+  - Changeable in `BepInEx/config/MoonforgedGatesAndFences.cfg`
+  - Lets you organize pieces exactly how you want in your hammer menu
+
+---
+
+## Community
+
+- Join the community on [Discord](https://discord.gg/kvtmArC9GS) for feedback, support, and sneak peeks
+- If the invite link expires, you can find me in the Valheim Discord
+
+---
+
+## Screenshots
 
 ### Old Gates Collection
 ![Old Gates](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/All.png)
 
 ---
 
-## 🔨 How to Install
+## How to Install
 
-1. **Install these first:**  
-   - [BepInEx Pack](https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/)  
-   - [Jotunn](https://valheim.thunderstore.io/package/ValheimModding/Jotunn/)  
+1. **Install these first:**
+   - [BepInEx Pack](https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/)
+   - [Jotunn](https://valheim.thunderstore.io/package/ValheimModding/Jotunn/)
 
-2. **Add this mod:**  
-   - Download the `.dll`  
-   - Put it in:  
+2. **Add this mod:**
+   - Download the `.dll`
+   - Put it in:
      `BepInEx/plugins/MoonforgedGatesAndFences/`
 
-3. **Launch Valheim:**  
-   - Your new build pieces will appear in the Hammer menu!  
+3. **Launch Valheim:**
+   - Your new build pieces will appear in the Hammer menu
 
 ---
 
-## 📝 Credits & Feedback
+## Credits & Feedback
 
-- Made by **Caenos**  
-- - Join the community on [Discord](https://discord.gg/wwGJqd7P) for feedback, support, and sneak peeks.
-- - If the invite link expires, you can find me in the Thunderstore Discord.
+Made by **Caenos**
 
+### Special Thanks
 
-## Special thanks :
+- **Marsarah** - for mentoring and guidance
+- **Magic Mike** - for helping refine and troubleshoot gate animations
+- **The Undertaker** - for testing and valuable feedback
+- **All my fans** - for the support, messages, and feedback
 
-- Marsarah – for mentoring and guidance.
-
-- Magic Mike – for helping refine and troubleshoot gate animations.
-
-- The Undertaker – for testing and providing valuable feedback.
 ---
 
 Happy building!
