@@ -35,6 +35,31 @@ namespace Moonforged.GatesAndFences
     {
         private static bool wasAlreadyRegistered = false;
 
+        private static readonly HashSet<string> MetalDoorSoundPrefabs = new HashSet<string>
+        {
+            "v1_SilverGate",
+            "v1_DvergrForgedGate",
+            "v1_DvergrForgedGate3m",
+            "v1_DvergrForgedGate4m",
+            "v1_EmberlightGate",
+            "v1_ValkyriesGate",
+            "v1_MoonforgedIronboundGate",
+            "M_Gargoyle_Gate",
+            "M_WolfGate"
+        };
+
+        private static readonly HashSet<string> NormalDoorSoundPrefabs = new HashSet<string>
+        {
+            "v1_GardenGate",
+            "M_Garden_Gate_Small",
+            "M_Garden_Gate",
+            "v1_Element03",
+            "v1_Element04",
+            "M_Garden_Gate_Arch",
+            "M_MedievalMetalDoor",
+            "v1_VikingArchGate"
+        };
+
         public static readonly List<RelicRegistration> AllRegistrations = new List<RelicRegistration>
         {
             new RelicRegistration("v1_SilverGate", "Silver Gate", new[] {
@@ -250,23 +275,38 @@ namespace Moonforged.GatesAndFences
         private static void RegisterRelic(AssetBundle bundle, RelicRegistration reg)
         {
             if (bundle == null) return;
+
+            // Prevent duplicate prefab registration if the event is raised again.
+            if (PrefabManager.Instance.GetPrefab(reg.PrefabName) != null) return;
+
             GameObject prefab = bundle.LoadAsset<GameObject>(reg.PrefabName);
-            if (prefab == null) return;
+            if (prefab == null)
+            {
+                Debug.LogWarning($"[Moonforged Gates & Fences] Missing prefab in AssetBundle: {reg.PrefabName}");
+                return;
+            }
 
             prefab.name = reg.PrefabName;
 
-            var znv = prefab.GetComponent<ZNetView>();
-            if (znv == null) znv = prefab.AddComponent<ZNetView>();
+            // Every registered build prefab receives its network components from code.
+            var znv = prefab.GetComponent<ZNetView>() ?? prefab.AddComponent<ZNetView>();
             znv.m_persistent = true;
             znv.m_syncInitialScale = true;
 
-            if (!prefab.GetComponent<ZSyncTransform>())
-                prefab.AddComponent<ZSyncTransform>();
+            var zsync = prefab.GetComponent<ZSyncTransform>() ?? prefab.AddComponent<ZSyncTransform>();
+            zsync.m_syncPosition = false;
+            zsync.m_syncRotation = false;
+            zsync.m_syncScale = true;
+            zsync.m_syncBodyVelocity = false;
+            zsync.m_characterParentSync = false;
 
-            Piece piece = prefab.GetComponent<Piece>();
-            if (piece == null) piece = prefab.AddComponent<Piece>();
+            // Every registered prefab receives a Piece component from code if it does not already have one.
+            Piece piece = prefab.GetComponent<Piece>() ?? prefab.AddComponent<Piece>();
             piece.m_name = reg.DisplayName;
             piece.m_description = reg.Description;
+            piece.m_enabled = true;
+            piece.m_canBeRemoved = true;
+            piece.m_canRotate = true;
             piece.m_groundOnly = false;
 
             GameObject vfxPlace = null;
@@ -350,8 +390,7 @@ namespace Moonforged.GatesAndFences
             placeFX.m_effectPrefabs = placeList.ToArray();
             piece.m_placeEffect = placeFX;
 
-            WearNTear wear = prefab.GetComponent<WearNTear>();
-            if (wear == null) wear = prefab.AddComponent<WearNTear>();
+            WearNTear wear = prefab.GetComponent<WearNTear>() ?? prefab.AddComponent<WearNTear>();
             wear.m_health = 1000f;
             wear.m_noRoofWear = true;
 
@@ -362,19 +401,148 @@ namespace Moonforged.GatesAndFences
             destroyFX.m_effectPrefabs = destroyList.ToArray();
             wear.m_destroyedEffect = destroyFX;
 
+            if (reg.Comfort > 0)
+                piece.m_comfort = reg.Comfort;
+
             Sprite icon = bundle.LoadAsset<Sprite>(reg.PrefabName);
             if (icon == null)
                 icon = bundle.LoadAsset<Sprite>(reg.PrefabName.ToLowerInvariant());
             if (icon != null)
                 piece.m_icon = icon;
 
-            var config = new PieceConfig();
-            config.PieceTable = "Hammer";
-            config.Category = CategoryToTab(reg.Category);
-            config.CraftingStation = reg.CraftingStation;
-            config.Requirements = reg.Requirements;
+            ApplyRuntimeDoorSounds(prefab, reg.PrefabName);
 
-            PieceManager.Instance.AddPiece(new CustomPiece(prefab, true, config));
+            var config = new PieceConfig
+            {
+                PieceTable = PieceTables.Hammer,
+                Category = CategoryToTab(reg.Category),
+                Usage = new[] { PieceUsages.Building },
+                CraftingStation = reg.CraftingStation,
+                Requirements = reg.Requirements ?? new RequirementConfig[0]
+            };
+
+            PieceManager.Instance.AddPiece(new CustomPiece(prefab, false, config));
+        }
+
+        private static void ApplyRuntimeDoorSounds(GameObject prefab, string prefabName)
+        {
+            if (prefab == null || string.IsNullOrEmpty(prefabName)) return;
+
+            // Wolf_Door keeps the custom open/close effects authored for that prefab.
+            if (prefabName == "Wolf_Door") return;
+
+            Door[] doors = prefab.GetComponentsInChildren<Door>(true);
+            if (doors == null || doors.Length == 0) return;
+
+            string sourceDoorPrefab;
+            string[] fallbackOpenEffects;
+            string[] fallbackCloseEffects;
+
+            if (MetalDoorSoundPrefabs.Contains(prefabName))
+            {
+                sourceDoorPrefab = "iron_grate";
+                fallbackOpenEffects = new[] { "v2_sfx_metalgate_open", "sfx_metalgate_open" };
+                fallbackCloseEffects = new[] { "v2_sfx_metalgate_close", "sfx_metalgate_close" };
+            }
+            else if (NormalDoorSoundPrefabs.Contains(prefabName))
+            {
+                sourceDoorPrefab = "wood_door";
+                fallbackOpenEffects = new[] { "v2_sfx_door_open", "sfx_door_open" };
+                fallbackCloseEffects = new[] { "v2_sfx_door_close", "sfx_door_close" };
+            }
+            else
+            {
+                sourceDoorPrefab = "darkwood_gate";
+                fallbackOpenEffects = new[] { "v2_sfx_darkwood_door_open", "sfx_darkwood_door_open" };
+                fallbackCloseEffects = new[] { "v2_sfx_darkwood_door_close", "sfx_darkwood_door_close" };
+            }
+
+            Door sourceDoor = GetRuntimeDoor(sourceDoorPrefab);
+            EffectList openEffects = sourceDoor != null && HasEffects(sourceDoor.m_openEffects)
+                ? sourceDoor.m_openEffects
+                : CreateRuntimeEffectList(fallbackOpenEffects);
+            EffectList closeEffects = sourceDoor != null && HasEffects(sourceDoor.m_closeEffects)
+                ? sourceDoor.m_closeEffects
+                : CreateRuntimeEffectList(fallbackCloseEffects);
+
+            if (!HasEffects(openEffects) || !HasEffects(closeEffects))
+            {
+                Debug.LogWarning($"[Moonforged Gates & Fences] Could not resolve runtime door sounds for {prefabName} using {sourceDoorPrefab}.");
+                return;
+            }
+
+            foreach (Door door in doors)
+            {
+                if (door == null) continue;
+                door.m_openEffects = openEffects;
+                door.m_closeEffects = closeEffects;
+            }
+        }
+
+        private static Door GetRuntimeDoor(string prefabName)
+        {
+            GameObject sourcePrefab = GetRuntimePrefab(prefabName);
+            if (sourcePrefab == null) return null;
+
+            Door sourceDoor = sourcePrefab.GetComponent<Door>();
+            if (sourceDoor == null)
+                sourceDoor = sourcePrefab.GetComponentInChildren<Door>(true);
+
+            return sourceDoor;
+        }
+
+        private static GameObject GetRuntimePrefab(string prefabName)
+        {
+            if (string.IsNullOrEmpty(prefabName)) return null;
+
+            GameObject runtimePrefab = ZNetScene.instance != null
+                ? ZNetScene.instance.GetPrefab(prefabName)
+                : null;
+
+            if (runtimePrefab == null && PrefabManager.Instance != null)
+                runtimePrefab = PrefabManager.Instance.GetPrefab(prefabName);
+
+            return runtimePrefab;
+        }
+
+        private static EffectList CreateRuntimeEffectList(string[] effectPrefabNames)
+        {
+            if (effectPrefabNames == null)
+                return new EffectList { m_effectPrefabs = new EffectList.EffectData[0] };
+
+            foreach (string effectPrefabName in effectPrefabNames)
+            {
+                GameObject effectPrefab = GetRuntimePrefab(effectPrefabName);
+                if (effectPrefab == null) continue;
+
+                return new EffectList
+                {
+                    m_effectPrefabs = new[]
+                    {
+                        new EffectList.EffectData
+                        {
+                            m_prefab = effectPrefab,
+                            m_enabled = true
+                        }
+                    }
+                };
+            }
+
+            return new EffectList { m_effectPrefabs = new EffectList.EffectData[0] };
+        }
+
+        private static bool HasEffects(EffectList effects)
+        {
+            if (effects == null || effects.m_effectPrefabs == null || effects.m_effectPrefabs.Length == 0)
+                return false;
+
+            foreach (EffectList.EffectData effectData in effects.m_effectPrefabs)
+            {
+                if (effectData != null && effectData.m_prefab != null)
+                    return true;
+            }
+
+            return false;
         }
     }
 }

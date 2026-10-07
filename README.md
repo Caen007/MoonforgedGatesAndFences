@@ -1,9 +1,8 @@
 # Moonforged Gates & Fences
 
-## Now supports Mac too !!
 ## Meadows Gates and Fences by popular request :)
 
-## New Gate - 1.0.9 Update
+## New Gate - 1.1.1 Update
 
 ![Preview Banner](https://raw.githubusercontent.com/Caen007/MoonforgedGatesAndFences/main/img/MeadowsFences.png)
 
@@ -41,7 +40,7 @@ Expand your building options in Valheim with a curated collection of handcrafted
 
 ## Community
 
-- Join the community on [Discord](https://discord.gg/kvtmArC9GS) for feedback, support, and sneak peeks
+- Join the community on [Discord](https://discord.gg/QJvhURcjyS) for feedback, support, and sneak peeks
 - If the invite link expires, you can find me in the Valheim Discord
 
 ---
@@ -69,15 +68,20 @@ Expand your building options in Valheim with a curated collection of handcrafted
 
 ---
 
-## Credits & Feedback
+# 📝 Credits & Feedback
 
-Made by **Caenos**
+- Made by **Caenos**
+- Join the community on [Discord](https://discord.gg/xtfpFnWmm) for feedback, support, and sneak peeks.
+- If the invite link expires, you can also find me in the Thunderstore or Valheim Discord communities.
+- Watch live on **Twitch**: [https://www.twitch.tv/Caen007](https://www.twitch.tv/Caen007)
+- Videos and tutorials on **YouTube**: [https://www.youtube.com/@Caenos007](https://www.youtube.com/@Caenos007)
+- Join the discussion on **Reddit**: [Modded Valheim Discussion](https://www.reddit.com/r/ModdedValheim/comments/1vw3n30/comment/p5dtktq/?screen_view_count=2&ext-referrer=DIRECT)
+- Support the project: 💖 [PayPal](https://www.paypal.com/paypalme/Caenos)
 
 ### Special Thanks
 
 - **Marsarah** - for mentoring and guidance
-- **Magic Mike** - for helping refine and troubleshoot gate animations
-- **The Undertaker** - for testing and valuable feedback
+- **Rocket (Joel)** - for testing and valuable feedback
 - **All my fans** - for the support, messages, and feedback
 
 ---

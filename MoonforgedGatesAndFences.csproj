@@ -37,14 +37,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="gatesandfences_windows">
-      <LogicalName>MoonforgedGatesAndFences.gatesandfences_windows</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gatesandfences_mac">
-      <LogicalName>MoonforgedGatesAndFences.gatesandfences_mac</LogicalName>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
     <Reference Include="0Harmony, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\0Harmony.dll</HintPath>
@@ -57,11 +51,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="Jotunn, Version=2.26.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Jotunn, Version=2.29.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\Jotunn.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\UnityEngine.dll</HintPath>
@@ -70,10 +63,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gatesandfences_windows" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
