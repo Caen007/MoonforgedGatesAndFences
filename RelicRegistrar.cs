@@ -236,9 +236,29 @@ namespace Moonforged.GatesAndFences
             }, "", "building", 0, "Workbench"),
 
 
-                        new RelicRegistration("Wolf_Door", "Moonforged Stone Wolf Door", new[] {
+        new RelicRegistration("Wolf_Door", "Moonforged Stone Wolf Door", new[] {
                 new RequirementConfig("Stone", 30),new RequirementConfig("Crystal", 10),new RequirementConfig("Iron", 10),
-            }, "", "building", 0, "Forge")
+            }, "", "building", 0, "Forge"),
+
+        new RelicRegistration("M_Twin_Dragon_Castle_Gate", "Moonforged Twin Dragon Castle Gate", new[] {
+                new RequirementConfig("RoundLog", 10),new RequirementConfig("Iron", 10),new RequirementConfig("Wood", 10),new RequirementConfig("Coal", 10),
+            }, "", "building", 0, "Forge"),
+
+        new RelicRegistration("M_Twin_Dragon_Door", "Moonforged Twin Dragon Door", new[] {
+                new RequirementConfig("RoundLog", 5),new RequirementConfig("Iron", 2),new RequirementConfig("Wood", 5),new RequirementConfig("Coal", 2),
+            }, "", "building", 0, "Forge"),
+
+        new RelicRegistration("M_Dragon_Door", "Moonforged Dragon Door", new[] {
+                new RequirementConfig("RoundLog", 2),new RequirementConfig("Iron", 1),new RequirementConfig("Wood", 2),new RequirementConfig("Coal", 2),
+            }, "", "building", 0, "Forge"),
+
+        new RelicRegistration("M_Green_Twig_Fence", "Moonforged Green Twig Fence", new[] {
+                new RequirementConfig("Wood", 2), new RequirementConfig("Dandelion", 2),
+            }, "", "building", 0, "Workbench"),
+
+        new RelicRegistration("M_Twig_Fence", "Moonforged Twig Fence", new[] {
+                new RequirementConfig("Wood", 2),
+            }, "", "building", 0, "Workbench")
         };
 
         public static IEnumerable<string> GetAllCategories()
@@ -335,7 +355,12 @@ namespace Moonforged.GatesAndFences
                 reg.PrefabName == "M_Garden_Fence1x1" ||
                 reg.PrefabName == "M_Garden_Fence_Medium" ||
                 reg.PrefabName == "M_Garden_Pole1x1" ||
-                reg.PrefabName == "M_Garden_Gate_Small"
+                reg.PrefabName == "M_Garden_Gate_Small" ||
+                reg.PrefabName == "M_Green_Twig_Fence" ||
+                reg.PrefabName == "M_Twig_Fence" ||
+                reg.PrefabName == "M_Twin_Dragon_Castle_Gate" ||
+                reg.PrefabName == "M_Twin_Dragon_Door" ||
+                reg.PrefabName == "M_Dragon_Door"
             )
             {
                 if (ZNetScene.instance != null)
