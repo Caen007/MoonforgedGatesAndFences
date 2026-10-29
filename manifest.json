@@ -1,0 +1,16 @@
+{
+    "name": "MoonforgedGatesAndFences",
+    "version_number": "1.1.2",
+    "website_url": "https://github.com/Caen007/MoonforgedGatesAndFences",
+    "description": "Adds handcrafted gates, fences, and walls to Valheim, including three dragon gates and doors, plus two twig fences.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2351",
+    "ValheimModding-Jotunn-2.30.2"
+  ],
+    "categories": [
+        "Building",
+        "Mods",
+        "Client-side",
+	"Misc"
+    ]
+}
